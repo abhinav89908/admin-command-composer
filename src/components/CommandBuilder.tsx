@@ -39,7 +39,7 @@ export const CommandBuilder: React.FC = () => {
   const addNodeToFlow = (command: CommandDefinition) => {
     const newNode = {
       id: `node-${Date.now()}`,
-      type: 'command',
+      type: 'command' as const, // Use const assertion to ensure type is exactly "command"
       data: {
         command,
         parameters: command.parameters.reduce((acc, param) => ({

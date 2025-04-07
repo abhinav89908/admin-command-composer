@@ -2,7 +2,7 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { CommandDefinition, CommandFlow, CommandExecution } from '@/types/command';
 import { sampleCommands } from '@/data/sampleCommands';
-import { toast } from '@/components/ui/sonner';
+import { toast } from 'sonner';
 
 interface CommandsContextType {
   commands: CommandDefinition[];

@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Eye, Play, Trash } from 'lucide-react';
 import { CommandNode } from './CommandNode';
-import { toast } from '@/components/ui/sonner';
+import { toast } from 'sonner';
 
 export const SavedFlows: React.FC = () => {
   const { savedFlows, loadFlow, executeFlow, deleteFlow } = useCommands();

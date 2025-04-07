@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -71,13 +70,11 @@ export const CommandForm: React.FC<CommandFormProps> = ({ command, onSave }) => 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate form
     if (!name || !commandString || !category) {
       alert('Please fill in all required fields.');
       return;
     }
     
-    // Create command object
     const newCommand: CommandDefinition = {
       id: command?.id || `cmd-${Date.now()}`,
       name,
@@ -134,7 +131,7 @@ export const CommandForm: React.FC<CommandFormProps> = ({ command, onSave }) => 
           required
         />
         <p className="text-xs text-muted-foreground">
-          Use {paramName} syntax to reference parameters.
+          Use {"{parameter_name}"} syntax to reference parameters.
         </p>
       </div>
       

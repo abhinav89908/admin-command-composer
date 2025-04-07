@@ -13,7 +13,7 @@ import {
   SelectValue 
 } from '@/components/ui/select';
 import { Switch } from '@/components/ui/switch';
-import { toast } from '@/components/ui/sonner';
+import { toast } from 'sonner';
 
 export const Settings: React.FC = () => {
   const handleSaveSettings = (e: React.FormEvent) => {
