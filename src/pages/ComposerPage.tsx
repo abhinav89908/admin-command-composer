@@ -1,10 +1,11 @@
 
+import React from 'react';
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { CommandsProvider } from "@/context/CommandsContext";
-import { Dashboard } from "@/components/Dashboard";
+import { CommandBuilder } from "@/components/CommandBuilder";
 
-const Index = () => {
+const ComposerPage = () => {
   return (
     <CommandsProvider>
       <SidebarProvider>
@@ -12,7 +13,7 @@ const Index = () => {
           <AppSidebar />
           <main className="flex-grow p-6 overflow-y-auto">
             <SidebarTrigger />
-            <Dashboard />
+            <CommandBuilder />
           </main>
         </div>
       </SidebarProvider>
@@ -20,4 +21,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default ComposerPage;
