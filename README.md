@@ -1,73 +1,86 @@
-# Welcome to your Lovable project
 
-## Project info
+# Admin Command Composer
 
-**URL**: https://lovable.dev/projects/ebb41a7a-cb97-45b9-951c-a6ef7dfe9198
+A powerful tool for creating and managing administrative commands, building command flows, and executing them.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- Command Library: Create, edit and manage command definitions
+- Command Composer: Build flows by combining commands
+- Saved Flows: Save and reuse command flows
+- Executions: Track execution history and results
+- Backend API: RESTful API for commands, flows, and executions
 
-**Use Lovable**
+## Project Structure
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ebb41a7a-cb97-45b9-951c-a6ef7dfe9198) and start prompting.
+```
+├── src/                  # Frontend source code
+│   ├── components/       # React components
+│   ├── context/          # Context providers
+│   ├── data/             # Sample data 
+│   ├── lib/              # Utility functions
+│   ├── pages/            # Page components
+│   ├── services/         # API services
+│   ├── types/            # Types (with JSDoc)
+│   └── App.js            # Main application
+├── server/               # Backend code
+│   ├── index.js          # Express server
+│   └── package.json      # Server dependencies
+└── package.json          # Frontend dependencies
+```
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+### Running the frontend:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```bash
+# Install dependencies
+npm install
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+# Start the development server
+npm start
+```
 
-Follow these steps:
+### Running the backend:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+# Navigate to server directory
+cd server
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Tech Stack
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Frontend: React, JavaScript, Tailwind CSS, shadcn/ui
+- Backend: Express, Node.js
+- State Management: React Context API, React Query
+- Routing: React Router
 
-**Use GitHub Codespaces**
+## API Endpoints
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Commands
 
-## What technologies are used for this project?
+- `GET /api/commands` - Get all commands
+- `POST /api/commands` - Create a new command
+- `GET /api/commands/:id` - Get a command by ID
+- `PUT /api/commands/:id` - Update a command
+- `DELETE /api/commands/:id` - Delete a command
 
-This project is built with:
+### Flows
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- `GET /api/flows` - Get all flows
+- `POST /api/flows` - Create a new flow
+- `GET /api/flows/:id` - Get a flow by ID
+- `PUT /api/flows/:id` - Update a flow
+- `DELETE /api/flows/:id` - Delete a flow
 
-## How can I deploy this project?
+### Executions
 
-Simply open [Lovable](https://lovable.dev/projects/ebb41a7a-cb97-45b9-951c-a6ef7dfe9198) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes it is!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- `GET /api/executions` - Get all executions
+- `POST /api/execute` - Execute a flow
+- `GET /api/executions/:id` - Get execution details
